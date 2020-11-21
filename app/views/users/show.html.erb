@@ -1,7 +1,13 @@
 <h1>プロフィール</h1>
+<p>
+  <% if current_user.avatar.attached? %>
+    <%= image_tag(current_user.avatar_thumbnail)%>
+  <% end %>
+</p>
 <h2>名前</h2>
 <%= current_user.name %>
 <h2>年齢</h2>
 <%= current_user.age %>
 <h2>メールアドレス</h2>
 <%= current_user.email %>
+<p><%= link_to "Edit profile", edit_user_registration_path, :class => 'navbar-link' %> </p>
