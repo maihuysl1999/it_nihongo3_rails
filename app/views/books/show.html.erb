@@ -19,5 +19,24 @@
   <%= image_tag(@book.image) %>
 </p>
 
+<div class="col-sm-4">
+    <div class="card bg-light mb-3" style="max-width: 40rem;">
+      <div class="card-header">レビュー</div>
+      <div class="card-body">
+      <%= form_with(model: @book_review, local: true) do |form| %>
+        <div class= "field">
+          <%= form.text_area :review, :class => "form-control" %>
+          <%= form.hidden_field :book_id, :value => @book.id %>
+          <%= form.hidden_field :user_id, :value => current_user.id %>
+        </div>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+       <% end %>
+       </div>
+    </div>
+  </div>
+</div>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
