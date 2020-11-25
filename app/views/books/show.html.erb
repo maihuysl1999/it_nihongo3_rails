@@ -21,7 +21,7 @@
 
 <div class="col-sm-4">
     <div class="card bg-light mb-3" style="max-width: 40rem;">
-      <div class="card-header">レビュー</div>
+      <div class="card-header"><h2>Review</h2></div>
       <div class="card-body">
       <%= form_with(model: @book_review, local: true) do |form| %>
         <div class= "field">
@@ -33,10 +33,15 @@
           <%= form.submit %>
         </div>
        <% end %>
+       <h2>Review List: </h2>
+       <ul>
+          <% @book.book_review.each do |book_review|%>
+              <p class="card-text">・<%= book_review.review %> (<%= book_review.user_id %>)</p>
+          <% end %>
+        </ul>
        </div>
     </div>
   </div>
 </div>
-
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

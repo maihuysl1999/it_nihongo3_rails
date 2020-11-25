@@ -16,4 +16,7 @@
 </p>
 
 <%= link_to 'Edit', edit_book_review_path(@book_review) %> |
-<%= link_to 'Back', book_reviews_path %>
+<%= link_to 'Back to book', controller: "books", action: "show", id: @book_review.book_id %>
+<%= link_to 'Edit List review', book_reviews_path %>
+
+
