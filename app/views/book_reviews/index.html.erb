@@ -15,7 +15,7 @@
   <tbody>
     <% @book_reviews.each do |book_review| %>
       <tr>
-        <td><%= book_review.user_id %></td>
+        <td><%= book_review.user.name %></td>
         <td><%= book_review.book_id %></td>
         <td><%= book_review.review %></td>
         <td><%= link_to 'Show', book_review %></td>
